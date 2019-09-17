@@ -1,0 +1,32 @@
+@media screen and (max-width:860px) {
+  .site-header .container .siteTitle {
+    font-size: 22px;
+    line-height: 1.16;
+  }
+  .logo {
+    margin-left: 10px;
+  }
+}
+@media screen and (max-width:560px) {
+  .site-header .container .siteTitle {
+    font-size: 18px;
+    line-height: 1.1;
+  }
+  .logo {
+    margin-left: 10px;
+    img{
+      width: 60px;
+    }
+  }
+}
+@media screen and (max-width:480px) {
+  .logo {
+    margin-left: 10px;
+    img{
+      display: none;
+    }
+  }
+  .header-right .main-navigation {
+    display: none;
+  }
+}
