@@ -13,6 +13,9 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    .site-branding {
+      width: 100%;
+    }
     .logo {
       display: flex;
       align-items: center;
@@ -26,6 +29,7 @@
     }
   }
 }
+
 .header-right {
   display: flex;
 }
@@ -36,6 +40,10 @@
 
 .logo {
   height: 60px;
+}
+.logo img {
+  height: 100%;
+  margin-right: 10px;
 }
 
 .nav-link {
@@ -70,12 +78,15 @@
     transition: transform 0.3s ease 0s;
     background: $bright-green;
   }
-  a:hover:after {
+  a:hover:after, a.active:after {
     transform: scale(1);
   }
   a:hover,
 
   a.active {
     font-weight: bold;
+    color: $bright-green;
   }
 }
+
+

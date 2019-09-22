@@ -35,7 +35,8 @@
     "react-burger-menu": "^2.6.11",
     "react-dom": "^16.9.0",
     "react-helmet": "^5.2.1",
-    "react-highlight-words": "^0.16.0"
+    "react-highlight-words": "^0.16.0",
+    "react-waypoint": "^9.0.2"
   },
   "devDependencies": {
     "prettier": "^1.18.2"

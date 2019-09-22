@@ -26,9 +26,11 @@ const Search = ({data, location}) => {
   }, [location.search])
   return(
     <Layout location={location} title={data.site.siteMetadata.title}>
-      <h1 className="blog-heading">Search</h1>
-      <SearchForm query={searchQuery}/>
-      <SearchResults query={searchQuery} results={results}/>
+      <div className="outer-page-wrap">
+        <h1 className="blog-heading">Search</h1>
+        <SearchForm query={searchQuery}/>
+        <SearchResults query={searchQuery} results={results}/>
+      </div>
     </Layout>
   )
 }

@@ -3,7 +3,7 @@ import { Link, graphql } from "gatsby"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import kebabCase from "lodash/kebabCase"
-import Video from '../components/video'
+import getVideoImage from '../utils/videoImageHelper'
 
 export default class BlogList extends React.Component {
   render() {
@@ -23,16 +23,20 @@ export default class BlogList extends React.Component {
             const title = node.frontmatter.title || node.fields.slug
             const tags = node.frontmatter.tags
             const categories = node.frontmatter.categories
-            const author = node.frontmatter.author
             const videoSrcURL = node.frontmatter.videoSrcURL
+            const videoId = getVideoImage(videoSrcURL)
             return (
               <article key={node.fields.slug} className="single-item">
                   <div className="video-wrap">
                     <Link className="cover-link" style={{textDecoration: 'none'}} to={node.fields.slug}></Link>
-                    <Video 
-                      videoSrcURL={videoSrcURL}
-                      videoTitle={title}
-                    />
+                    <iframe
+                      src={videoSrcURL}
+                      srcDoc={`<style>*{padding:0;margin:0;overflow:hidden}html,body{height:100%}img,span{position:absolute;width:100%;top:0;bottom:0;margin:auto}span{height:1.5em;text-align:center;font:48px/1.5 sans-serif;color:white;text-shadow:0 0 0.5em black}</style><a href=${videoSrcURL}?autoplay=1><img src=https://img.youtube.com/vi/${videoId}/hqdefault.jpg alt=${title}><span>▶</span></a>`}
+                      frameBorder="0"
+                      allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                      allowFullScreen
+                      title={title}
+                    ></iframe>
                   </div>
                   <div className="titleAndCategory">
                     <h3 className="title">
@@ -41,7 +45,7 @@ export default class BlogList extends React.Component {
                     <div className="category">
                       {categories.map(category => {
                         return(
-                          <Link key={category} to={`/categories/${kebabCase(category)}/`} >
+                          <Link className="badge badge-orange category-badge" key={category} to={`/categories/${kebabCase(category)}/`} >
                             {category} 
                           </Link>
                         )
@@ -53,7 +57,7 @@ export default class BlogList extends React.Component {
                     <div className='item-tags'> 
                       {tags.map(tag => {
                         return(
-                          <Link className="badge" key={tag} to={`/tags/${kebabCase(tag)}/`} >
+                          <Link className="badge badge-blue" key={tag} to={`/tags/${kebabCase(tag)}/`} >
                             {tag} 
                           </Link>
                         )

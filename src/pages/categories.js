@@ -14,15 +14,17 @@ const CategoriesPage = ({
   },
 }) => (
   <Layout  title={title}>
-    <h1 className="blog-heading">Categories</h1>
-    <div>
+    <div className="outer-page-wrap">
+      <h1 className="blog-heading">Categories</h1>
       <div>
-        <ul>
+        <ul className="page-list">
           {group.map(category => (
             <li key={category.fieldValue}>
-              <Link to={`/tags/${kebabCase(category.fieldValue)}/`}>
-                {category.fieldValue} ({category.totalCount})
-              </Link>
+              <h3>
+                <Link className="page-list__link" to={`/categories/${kebabCase(category.fieldValue)}/`}>
+                  {category.fieldValue} ({category.totalCount})
+                </Link>
+              </h3>
             </li>
           ))}
         </ul>

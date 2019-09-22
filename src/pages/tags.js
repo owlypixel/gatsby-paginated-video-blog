@@ -14,15 +14,17 @@ const TagsPage = ({
   },
 }) => (
   <Layout  title={title}>
-    <h1 className="blog-heading">Tags</h1>
-    <div>
+    <div className="outer-page-wrap">
+      <h1 className="blog-heading">Tags</h1>
       <div>
-        <ul>
+        <ul className="page-list">
           {group.map(tag => (
             <li key={tag.fieldValue}>
-              <Link to={`/tags/${kebabCase(tag.fieldValue)}/`}>
-                {tag.fieldValue} ({tag.totalCount})
-              </Link>
+              <h3>
+                <Link className="page-list__link" to={`/tags/${kebabCase(tag.fieldValue)}/`}>
+                  {tag.fieldValue} ({tag.totalCount})
+                </Link>
+              </h3>
             </li>
           ))}
         </ul>

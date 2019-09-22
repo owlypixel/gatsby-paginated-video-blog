@@ -1,3 +1,5 @@
+@import '../styles/colors.scss';
+
 #page-wrap {
   /* text-align: center; */
 
@@ -20,6 +22,7 @@
   color: white;
   // transition: color 0.1s;
   transition: all 0.3s ease-in;
+  font-size: 1.15em;
 }
 
 /* Change color on hover */
@@ -64,14 +67,19 @@
 
 /* General sidebar styles */
 .bm-menu {
-  background: #23282d;
+  background: #0f202e;
   padding: 2.5em 1.5em 0;
   font-size: 1.15em;
 }
-
+.bm-menu a:focus, .bm-menu a:hover {
+  color: $bright-green;
+}
+.bm-item:focus {
+  outline: none;
+}
 /* Morph shape necessary with bubble or elastic */
 .bm-morph-shape {
-  fill: #23282d;
+  fill: #0f202e;
 }
 
 /* Wrapper for item list */

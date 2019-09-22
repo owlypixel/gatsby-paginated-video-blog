@@ -6,6 +6,14 @@
   .logo {
     margin-left: 10px;
   }
+  .video-page-wrap {
+    padding: 0 10px;
+  }
+}
+@media screen and (max-width:700px) {
+  .site-header .container .siteTitle {
+    display: none;
+  }
 }
 @media screen and (max-width:560px) {
   .site-header .container .siteTitle {
@@ -18,15 +26,44 @@
       width: 60px;
     }
   }
+  form.contact-form {
+    grid-template-columns: 1fr;
+    padding: 15px 22px;
+  }
+  button.form-submit-button {
+    grid-column: initial;
+  }
 }
 @media screen and (max-width:480px) {
   .logo {
     margin-left: 10px;
     img{
-      display: none;
     }
+  }
+  .site-header .container .siteTitle {
+    display: block;
   }
   .header-right .main-navigation {
     display: none;
   }
+  nav .post-nav li {
+    width: 100%;
+    margin-bottom: 15px;
+  }
+  .post-header h1, .blog-heading {
+    font-size: 22px;
+  }
+  .site-header.header-fixed{
+    background: transparent;
+    border-bottom: transparent;
+    .site-branding {
+      display: none;
+    }
+    .header-right{
+      position: fixed;
+      right: 0;
+      top: 0;
+    }
+  }
+
 }

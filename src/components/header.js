@@ -1,11 +1,13 @@
-import React, { useContext } from 'react'
+import React from 'react'
 import "./header.scss"
 import MenuBurgerButton from './burgerButton'
 import { Link, useStaticQuery, graphql } from "gatsby"
 
-import Logo from "../../content/assets/site-logo.png" 
+import Logo from "../../content/assets/ctogg-logo.svg" 
 
-const Header = () => {
+
+const Header = (props) => {
+  const { isHeaderFixed } = props;
   const data = useStaticQuery(graphql`
     query SiteQuery {
       site {
@@ -23,12 +25,12 @@ const Header = () => {
   
   const activeClassName = "active"
   return (
-    <header className="site-header">
+    <header className={isHeaderFixed ? "site-header header-fixed" : "site-header"}>
       <div className="wrapper">
         <div className="container">
           <div className="site-branding">
             <Link className="logo" to='/'>
-              <img src={Logo} width="100px"/>
+              <img src={Logo} alt="Website logo"/>
               <span className="siteTitle">Check This Out, Guitar God!</span>
             </Link>
           </div>

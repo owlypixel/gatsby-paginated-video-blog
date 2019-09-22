@@ -1,9 +1,9 @@
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Starter Video Blog`,
+    title: `Check This Out, Guitar God`,
     author: `Owlypixel`,
-    description: `A starter video blog for guitar videos.`,
-    siteUrl: `https://gatsby-starter-blog-demo.netlify.com/`,
+    description: `A guitar video blog`,
+    siteUrl: `https://checkthisoutguitargod.com`,
     social: {
       twitter: `owlypixel`,
     },
@@ -15,6 +15,14 @@ module.exports = {
       {
          name:'Contact',
          link:'/contact'
+      },
+      {
+         name:'Categories',
+         link:'/categories'
+      },
+      {
+         name:'Tags',
+         link:'/tags'
       },
       {
         name:'🔍 ',
@@ -71,13 +79,13 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `Gatsby Starter Blog`,
-        short_name: `GatsbyJS`,
+        name: `Check This Out, Guitar God`,
+        short_name: `CTOGG`,
         start_url: `/`,
         background_color: `#ffffff`,
-        theme_color: `#663399`,
-        display: `minimal-ui`,
-        icon: `content/assets/gatsby-icon.png`,
+        theme_color: `#0f202e`,
+        display: `standalone`,
+        icon: `content/assets/ctogg-logo.png`,
       },
     },
     `gatsby-plugin-offline`,

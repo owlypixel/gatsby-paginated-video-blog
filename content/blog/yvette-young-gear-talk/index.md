@@ -8,4 +8,3 @@ tags: ['shred']
 categories: ['Yvette Young']
 ---
 
-In this clip, the guitarist Yvette Young from the band COVET grants us insights into her live setup and tells her why she puts her faith in the VOX AC Series amps at home, in the studio and on stage. All information about the AC30 Custom: https://voxamps.com/ac30c2

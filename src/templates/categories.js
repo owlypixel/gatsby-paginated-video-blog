@@ -10,29 +10,31 @@ const Categories = ({ pageContext, data }) => {
   const { edges, totalCount } = data.allMarkdownRemark
   const categoryHeader = `${totalCount} post${
     totalCount === 1 ? "" : "s"
-  } tagged with "${category}"`
+  } in the category "${category}"`
   const siteTitle = data.site.siteMetadata.title
 
   return (
     <Layout title={siteTitle} >
-      <h1 className="blog-heading">{categoryHeader}</h1>
-      <div>
-        <ul>
-          {edges.map(({ node }) => {
-            const { slug } = node.fields
-            const { title } = node.frontmatter
-            return (
-              <li key={slug}>
-                <Link to={slug}>{title}</Link>
-              </li>
-            )
-          })}
-        </ul>
-        {/*
-                This links to a page that does not yet exist.
-                We'll come back to it!
-              */}
-        <Link to="/categories">All categories</Link>
+      <div className="outer-page-wrap">
+        <h1 className="blog-heading">{categoryHeader}</h1>
+        <div>
+          <ul className="page-list">
+            {edges.map(({ node }) => {
+              const { slug } = node.fields
+              const { title } = node.frontmatter
+              return (
+                <li key={slug}>
+                  <h3>
+                    <Link className="page-list__link" to={slug}>{title}</Link>
+                  </h3>
+                </li>
+              )
+            })}
+          </ul>
+          <div className="nav-links">
+            <Link className="generic-link" to="/categories">All categories</Link>
+          </div>
+        </div>
       </div>
     </Layout>
   )
@@ -68,7 +70,7 @@ export const pageQuery = graphql`
     allMarkdownRemark(
       limit: 2000
       sort: { fields: [frontmatter___date], order: DESC }
-      filter: { frontmatter: { tags: { in: [$category] } } }
+      filter: { frontmatter: { categories: { in: [$category] } } }
     ) {
       totalCount
       edges {
