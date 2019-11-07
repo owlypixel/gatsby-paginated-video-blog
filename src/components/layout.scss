@@ -264,6 +264,9 @@ footer {
 	background: #444857;
 	border-radius: 5px;
 }
+.post-nav li:empty {
+	background: transparent;
+}
 .post-nav li a {
 	border-radius: 5px;
 	text-decoration: none;
