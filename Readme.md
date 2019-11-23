@@ -1,5 +1,5 @@
 ## Check This Out, Guitar God! - GatsbyJS Markdown Guitar Video Blog
-![CTOGG screenshot](https://github.com/owlypixel/Owl_Generator/raw/static/screenshot.png)
+![CTOGG screenshot](https://github.com/owlypixel/gatsby-paginated-video-blog/raw/static/screenshot.png)
 
 ## What is this?
 This project's purpose was to learn how to use the PWA generator - GatsbyJS, while simultaneously build something fun.
