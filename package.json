@@ -29,7 +29,7 @@
     "gatsby-transformer-remark": "^2.6.22",
     "gatsby-transformer-sharp": "^2.2.14",
     "lodash.debounce": "^4.0.8",
-    "node-sass": "^4.12.0",
+    "node-sass": "^7.0.0",
     "prismjs": "^1.17.1",
     "react": "^16.9.0",
     "react-burger-menu": "^2.6.11",
